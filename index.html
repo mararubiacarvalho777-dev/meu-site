@@ -119,21 +119,22 @@
       border: none;
     }
     
-    /* Estilos para as fotos da família */
+    /* Estilos para as fotos da família - CORRIGIDOS */
     .family-photo {
       width: 100%;
-      height: 300px;
+      height: 350px; /* Ajuste de altura para proporção 1:2 */
       object-fit: cover;
-      border: 8px solid #f8f5f0;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      transition: all 0.3s ease;
+      border: 10px solid #f8f5f0;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      transition: all 0.4s ease;
+      border-radius: 4px;
     }
     
     .family-photo-container {
       position: relative;
-      margin-bottom: 20px;
+      margin-bottom: 25px;
       overflow: hidden;
-      border-radius: 5px;
+      border-radius: 8px;
     }
     
     .family-photo-container::after {
@@ -142,10 +143,11 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      height: 30%;
-      background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%);
+      height: 40%;
+      background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
       opacity: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity 0.4s ease;
+      z-index: 1;
     }
     
     .family-photo-container:hover::after {
@@ -157,11 +159,11 @@
       bottom: 0;
       left: 0;
       width: 100%;
-      padding: 15px;
-      background: rgba(58, 44, 30, 0.85);
+      padding: 20px;
+      background: rgba(58, 44, 30, 0.9);
       color: white;
       transform: translateY(100%);
-      transition: transform 0.3s ease;
+      transition: transform 0.4s ease;
       z-index: 2;
     }
     
@@ -170,14 +172,29 @@
     }
     
     .family-photo-container:hover .family-photo {
-      transform: scale(1.05);
+      transform: scale(1.08);
     }
     
     .family-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-      margin-top: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 35px;
+      margin-top: 45px;
+    }
+    
+    /* Novo estilo para melhorar o enquadramento */
+    .photo-frame {
+      position: relative;
+      padding: 15px;
+      background: linear-gradient(145deg, #f8f5f0, #e8e5e0);
+      border-radius: 12px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+      transition: all 0.3s ease;
+    }
+    
+    .photo-frame:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     }
   </style>
 </head>
@@ -279,29 +296,35 @@
         <div class="swiper-pagination mt-4"></div>
       </div>
 
-      <!-- Galeria de fotos da família -->
+      <!-- Galeria de fotos da família - ENQUADRAMENTO CORRIGIDO -->
       <div class="family-grid" data-aos="fade-up" data-aos-delay="300">
-        <div class="family-photo-container">
-          <img src="avo.png" alt="Fundador da Marcenaria Manhone" class="family-photo">
-          <div class="family-photo-caption">
-            <h4 class="font-bold">Fundador</h4>
-            <p>Nosso patriarca, que iniciou essa jornada há 54 anos</p>
+        <div class="photo-frame">
+          <div class="family-photo-container">
+            <img src="pai.png" alt="Fundador da Marcenaria Manhone" class="family-photo">
+            <div class="family-photo-caption">
+              <h4 class="font-bold text-lg">Fundador</h4>
+              <p class="text-sm">Nosso patriarca, que iniciou essa jornada há 54 anos</p>
+            </div>
           </div>
         </div>
         
-        <div class="family-photo-container">
-          <img src="tio.png" alt="Filho continuando o legado" class="family-photo">
-          <div class="family-photo-caption">
-            <h4 class="font-bold">Segunda Geração</h4>
-            <p>Continuando o legado com a mesma dedicação</p>
+        <div class="photo-frame">
+          <div class="family-photo-container">
+            <img src="tio.png" alt="Filho continuando o legado" class="family-photo">
+            <div class="family-photo-caption">
+              <h4 class="font-bold text-lg">Segunda Geração</h4>
+              <p class="text-sm">Continuando o legado com a mesma dedicação</p>
+            </div>
           </div>
         </div>
         
-        <div class="family-photo-container">
-          <img src="pai.png" alt="Outro filho da família" class="family-photo">
-          <div class="family-photo-caption">
-            <h4 class="font-bold">Segundaa Geração</h4>
-            <p>Mantendo viva a tradição familiar</p>
+        <div class="photo-frame">
+          <div class="family-photo-container">
+            <img src="pai.png" alt="Outro filho da família" class="family-photo">
+            <div class="family-photo-caption">
+              <h4 class="font-bold text-lg">Terceira Geração</h4>
+              <p class="text-sm">Mantendo viva a tradição familiar</p>
+            </div>
           </div>
         </div>
       </div>
@@ -352,7 +375,7 @@
             <i class="fas fa-paint-roller"></i>
           </div>
           <h3 class="text-xl font-semibold mb-3 text-center">Restauração</h3>
-          <p class="text-center">Rejuvenescimento de móveis antigos, preservando a história e a beleza de peças com valor sentimental.</p>
+          <p class="text-center">Rejuvenescimento de móveis antidos, preservando a história e a beleza de peças com valor sentimental.</p>
         </div>
         
         <div class="service-card bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="500">
