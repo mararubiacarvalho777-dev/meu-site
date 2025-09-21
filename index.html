@@ -97,6 +97,14 @@
       margin: 5px;
       font-size: 0.9rem;
     }
+    
+    .hero-section {
+      background-color: #3a2c1e;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
   </style>
 </head>
 <body class="bg-wood-light text-wood-dark">
@@ -119,9 +127,8 @@
     </nav>
   </header>
 
-  <!-- HERO SECTION -->
-  <section id="inicio" class="h-screen flex items-center justify-center bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
-    <div class="hero-overlay absolute inset-0"></div>
+  <!-- HERO SECTION - SEM IMAGEM DE FUNDO -->
+  <section id="inicio" class="hero-section">
     <div data-aos="fade-up" class="text-center text-white z-10 px-4">
       
       <!-- Logo - Use o nome exato do arquivo que você fez upload -->
@@ -326,12 +333,7 @@
                   <a href="https://instagram.com/marcenaria.manhone" target="_blank" class="hover:text-yellow-700">@marcenaria.manhone</a>
                 </div>
               </div>
-              
-              <div class="flex items-center gap-4">
-                <div class="bg-yellow-700 text-white p-3 rounded-full">
-                  <i class="fas fa-envelope text-lg"></i>
-                </div>
-                <div>
+            </div>
             
             <!-- Informações de localização -->
             <div class="mt-6 pt-6 border-t border-gray-300">
@@ -428,4 +430,3 @@
   </script>
 </body>
 </html>
-
