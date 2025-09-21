@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marcenaria - Mara Rubia</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- SwiperJS (carrossel horizontal) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Animate on Scroll (AOS) -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    body { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-[#f8f5f0] text-gray-800 font-sans">
+
+  <!-- NAVBAR -->
+  <header class="fixed w-full top-0 left-0 bg-white shadow z-50">
+    <nav class="flex justify-center gap-10 py-4 text-lg font-medium">
+      <a href="#inicio" class="hover:text-yellow-600">Início</a>
+      <a href="#quemsomos" class="hover:text-yellow-600">Sobre Nós</a>
+      <a href="#servicos" class="hover:text-yellow-600">Serviços</a>
+      <a href="#contato" class="hover:text-yellow-600">Contato</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="inicio" class="h-screen flex items-center justify-center bg-cover bg-center text-white" style="background-image: url('https://picsum.photos/1200/700?random=11');">
+    <div data-aos="fade-up" class="bg-black bg-opacity-50 p-10 rounded-xl text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Bem-vindo à Nossa Marcenaria</h1>
+      <p class="text-lg md:text-xl">Transformando madeira em design exclusivo</p>
+    </div>
+  </section>
+
+  <!-- SOBRE NÓS (CARROSSEL HORIZONTAL) -->
+  <section id="quemsomos" class="min-h-screen flex flex-col items-center justify-center px-6 bg-white">
+    <h2 class="text-3xl font-bold mb-10" data-aos="fade-up">Sobre Nós</h2>
+
+    <div class="swiper w-full max-w-4xl" data-aos="fade-left">
+      <div class="swiper-wrapper">
+
+        <div class="swiper-slide bg-gray-100 p-8 rounded-xl shadow">
+          <h3 class="text-xl font-semibold mb-4">História</h3>
+          <p>Há mais de 30 anos, nossa família iniciou a marcenaria com paixão e dedicação.</p>
+        </div>
+
+        <div class="swiper-slide bg-gray-100 p-8 rounded-xl shadow">
+          <h3 class="text-xl font-semibold mb-4">Tradição</h3>
+          <p>De geração em geração, mantemos o cuidado artesanal em cada detalhe.</p>
+        </div>
+
+        <div class="swiper-slide bg-gray-100 p-8 rounded-xl shadow">
+          <h3 class="text-xl font-semibold mb-4">Missão</h3>
+          <p>Nosso propósito é transformar sonhos em móveis planejados e duradouros.</p>
+        </div>
+
+        <div class="swiper-slide bg-gray-100 p-8 rounded-xl shadow">
+          <h3 class="text-xl font-semibold mb-4">Inovação</h3>
+          <p>Unimos tecnologia e tradição para oferecer soluções modernas e inteligentes.</p>
+        </div>
+
+      </div>
+      <!-- Botões -->
+      <div class="swiper-button-next text-yellow-600"></div>
+      <div class="swiper-button-prev text-yellow-600"></div>
+      <div class="swiper-pagination"></div>
+    </div>
+  </section>
+
+  <!-- SERVIÇOS -->
+  <section id="servicos" class="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-6">
+    <h2 class="text-3xl font-bold mb-10" data-aos="fade-up">Nossos Serviços</h2>
+    <p class="max-w-2xl text-center text-lg" data-aos="fade-right">
+      Móveis planejados, restauração e design sob medida. Trabalhamos lado a lado com você para transformar suas ideias em realidade.
+    </p>
+  </section>
+
+  <!-- CONTATO -->
+  <section id="contato" class="min-h-screen flex flex-col items-center justify-center bg-white px-6">
+    <h2 class="text-3xl font-bold mb-10" data-aos="fade-up">Contato</h2>
+    <div class="flex flex-col md:flex-row gap-10" data-aos="fade-up">
+      <a href="https://instagram.com/SEUINSTAGRAM" target="_blank" class="text-xl">📷 Instagram</a>
+      <a href="https://wa.me/55SEUNUMERO" target="_blank" class="text-xl">💬 WhatsApp</a>
+    </div>
+    <div class="w-full max-w-3xl mt-10" data-aos="fade-up">
+      <iframe src="https://docs.google.com/forms/d/e/SEU-LINK-AQUI/viewform?embedded=true" class="w-full h-[500px] border rounded-xl"></iframe>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-gray-900 text-white text-center py-4">
+    <p>&copy; 2025 Mara Rubia - Todos os direitos reservados</p>
+  </footer>
+
+  <!-- INIT SCRIPTS -->
+  <script>
+    AOS.init({ duration: 1000, once: true });
+
+    const swiper = new Swiper('.swiper', {
+      loop: true,
+      autoplay: { delay: 4000, disableOnInteraction: false },
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+    });
+  </script>
+</body>
+</html>
