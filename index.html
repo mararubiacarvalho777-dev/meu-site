@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -17,92 +16,299 @@
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+  <!-- Font Awesome para ícones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <style>
-    body { scroll-behavior: smooth; }
+    body { 
+      scroll-behavior: smooth; 
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    /* Cores personalizadas */
+    .bg-wood-light {
+      background-color: #f8f5f0;
+    }
+    
+    .bg-wood-dark {
+      background-color: #3a2c1e;
+    }
+    
+    .text-wood-dark {
+      color: #3a2c1e;
+    }
+    
+    .border-wood {
+      border-color: #8b5a2b;
+    }
+    
+    /* Efeito de hover para cards */
+    .service-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .service-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+    }
+    
+    /* Ajustes para o carrossel */
+    .swiper-pagination-bullet-active {
+      background-color: #8b5a2b !important;
+    }
+    
+    .swiper-button-next, .swiper-button-prev {
+      color: #8b5a2b !important;
+    }
+    
+    /* Gradiente para hero section */
+    .hero-overlay {
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
+    }
+    
+    /* Estilo para o formulário */
+    .form-container {
+      background-color: #f8f5f0;
+      border-radius: 12px;
+      padding: 2rem;
+    }
   </style>
 </head>
-<body class="bg-[#f8f5f0] text-gray-800 font-sans">
+<body class="bg-wood-light text-wood-dark">
 
   <!-- NAVBAR -->
-  <header class="fixed w-full top-0 left-0 bg-white shadow z-50">
-    <nav class="flex justify-center gap-10 py-4 text-lg font-medium">
-      <a href="#inicio" class="hover:text-yellow-600">Início</a>
-      <a href="#quemsomos" class="hover:text-yellow-600">Sobre Nós</a>
-      <a href="#servicos" class="hover:text-yellow-600">Serviços</a>
-      <a href="#contato" class="hover:text-yellow-600">Contato</a>
+  <header class="fixed w-full top-0 left-0 bg-white shadow-md z-50">
+    <nav class="container mx-auto flex justify-between items-center py-4 px-6">
+      <div class="text-xl font-bold text-wood-dark">
+        <span class="text-yellow-700">Mara</span> Rubia Marcenaria
+      </div>
+      <div class="hidden md:flex gap-8 text-lg font-medium">
+        <a href="#inicio" class="hover:text-yellow-700 transition-colors">Início</a>
+        <a href="#quemsomos" class="hover:text-yellow-700 transition-colors">Sobre Nós</a>
+        <a href="#servicos" class="hover:text-yellow-700 transition-colors">Serviços</a>
+        <a href="#contato" class="hover:text-yellow-700 transition-colors">Contato</a>
+      </div>
+      <div class="md:hidden text-2xl">
+        <i class="fas fa-bars"></i>
+      </div>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section id="inicio" class="h-screen flex items-center justify-center bg-cover bg-center text-white" style="background-image: url('https://picsum.photos/1200/700?random=11');">
-    <div data-aos="fade-up" class="bg-black bg-opacity-50 p-10 rounded-xl text-center">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">Bem-vindo à Nossa Marcenaria</h1>
-      <p class="text-lg md:text-xl">Transformando madeira em design exclusivo</p>
+  <section id="inicio" class="h-screen flex items-center justify-center bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
+    <div class="hero-overlay absolute inset-0"></div>
+    <div data-aos="fade-up" class="text-center text-white z-10 px-4">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">Arte em Madeira</h1>
+      <p class="text-xl md:text-2xl mb-8">Transformamos sua visão em móveis únicos e funcionais</p>
+      <a href="#contato" class="bg-yellow-700 hover:bg-yellow-800 text-white px-8 py-3 rounded-lg text-lg font-semibold transition-colors">Solicite um Orçamento</a>
     </div>
   </section>
 
   <!-- SOBRE NÓS (CARROSSEL HORIZONTAL) -->
-  <section id="quemsomos" class="min-h-screen flex flex-col items-center justify-center px-6 bg-white">
-    <h2 class="text-3xl font-bold mb-10" data-aos="fade-up">Sobre Nós</h2>
+  <section id="quemsomos" class="py-20 px-6 bg-white">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-16 text-center" data-aos="fade-up">Nossa História</h2>
 
-    <div class="swiper w-full max-w-4xl" data-aos="fade-left">
-      <div class="swiper-wrapper">
+      <div class="swiper w-full max-w-6xl mx-auto" data-aos="fade-left">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="bg-wood-light p-8 rounded-xl shadow-lg h-full flex flex-col">
+              <div class="text-4xl text-yellow-700 mb-4">
+                <i class="fas fa-history"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-4">História</h3>
+              <p class="flex-grow">Há mais de 30 anos, nossa família iniciou a marcenaria com paixão e dedicação, criando peças que unem tradição e inovação.</p>
+            </div>
+          </div>
 
-        <div class="swiper-slide bg-gray-100 p-8 rounded-xl shadow">
-          <h3 class="text-xl font-semibold mb-4">História</h3>
-          <p>Há mais de 30 anos, nossa família iniciou a marcenaria com paixão e dedicação.</p>
+          <div class="swiper-slide">
+            <div class="bg-wood-light p-8 rounded-xl shadow-lg h-full flex flex-col">
+              <div class="text-4xl text-yellow-700 mb-4">
+                <i class="fas fa-hands"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-4">Tradição</h3>
+              <p class="flex-grow">De geração em geração, mantemos o cuidado artesanal em cada detalhe, honrando as técnicas tradicionais da marcenaria.</p>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="bg-wood-light p-8 rounded-xl shadow-lg h-full flex flex-col">
+              <div class="text-4xl text-yellow-700 mb-4">
+                <i class="fas fa-bullseye"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-4">Missão</h3>
+              <p class="flex-grow">Nosso propósito é transformar sonhos em móveis planejados e duradouros, que acompanham histórias por gerações.</p>
+            </div>
+          </div>
+
+          <div class="swiper-slide">
+            <div class="bg-wood-light p-8 rounded-xl shadow-lg h-full flex flex-col">
+              <div class="text-4xl text-yellow-700 mb-4">
+                <i class="fas fa-lightbulb"></i>
+              </div>
+              <h3 class="text-xl font-semibold mb-4">Inovação</h3>
+              <p class="flex-grow">Unimos tecnologia e tradição para oferecer soluções modernas e inteligentes, sempre respeitando o material e o cliente.</p>
+            </div>
+          </div>
         </div>
-
-        <div class="swiper-slide bg-gray-100 p-8 rounded-xl shadow">
-          <h3 class="text-xl font-semibold mb-4">Tradição</h3>
-          <p>De geração em geração, mantemos o cuidado artesanal em cada detalhe.</p>
-        </div>
-
-        <div class="swiper-slide bg-gray-100 p-8 rounded-xl shadow">
-          <h3 class="text-xl font-semibold mb-4">Missão</h3>
-          <p>Nosso propósito é transformar sonhos em móveis planejados e duradouros.</p>
-        </div>
-
-        <div class="swiper-slide bg-gray-100 p-8 rounded-xl shadow">
-          <h3 class="text-xl font-semibold mb-4">Inovação</h3>
-          <p>Unimos tecnologia e tradição para oferecer soluções modernas e inteligentes.</p>
-        </div>
-
+        <!-- Botões -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-pagination mt-4"></div>
       </div>
-      <!-- Botões -->
-      <div class="swiper-button-next text-yellow-600"></div>
-      <div class="swiper-button-prev text-yellow-600"></div>
-      <div class="swiper-pagination"></div>
     </div>
   </section>
 
   <!-- SERVIÇOS -->
-  <section id="servicos" class="min-h-screen flex flex-col items-center justify-center bg-gray-100 px-6">
-    <h2 class="text-3xl font-bold mb-10" data-aos="fade-up">Nossos Serviços</h2>
-    <p class="max-w-2xl text-center text-lg" data-aos="fade-right">
-      Móveis planejados, restauração e design sob medida. Trabalhamos lado a lado com você para transformar suas ideias em realidade.
-    </p>
+  <section id="servicos" class="py-20 px-6 bg-wood-light">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-4 text-center" data-aos="fade-up">Nossos Serviços</h2>
+      <p class="max-w-2xl mx-auto text-center text-lg mb-16" data-aos="fade-right">
+        Móveis planejados, restauração e design sob medida. Trabalhamos lado a lado com você para transformar suas ideias em realidade.
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="service-card bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="100">
+          <div class="text-4xl text-yellow-700 mb-4 text-center">
+            <i class="fas fa-couch"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-center">Móveis Sob Medida</h3>
+          <p class="text-center">Criamos móveis exclusivos perfeitamente adaptados ao seu espaço e necessidades, com design personalizado.</p>
+        </div>
+        
+        <div class="service-card bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="200">
+          <div class="text-4xl text-yellow-700 mb-4 text-center">
+            <i class="fas fa-home"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-center">Projetos Residenciais</h3>
+          <p class="text-center">Cozinhas, dormitórios, salas e banheiros planejados com funcionalidade e estilo que refletem sua personalidade.</p>
+        </div>
+        
+        <div class="service-card bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="300">
+          <div class="text-4xl text-yellow-700 mb-4 text-center">
+            <i class="fas fa-building"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-center">Projetos Comerciais</h3>
+          <p class="text-center">Móveis corporativos, lojas, restaurantes e espaços comerciais com design que valoriza sua marca.</p>
+        </div>
+        
+        <div class="service-card bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="400">
+          <div class="text-4xl text-yellow-700 mb-4 text-center">
+            <i class="fas fa-paint-roller"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-center">Restauração</h3>
+          <p class="text-center">Rejuvenescimento de móveis antigos, preservando a história e a beleza de peças com valor sentimental.</p>
+        </div>
+        
+        <div class="service-card bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="500">
+          <div class="text-4xl text-yellow-700 mb-4 text-center">
+            <i class="fas fa-vector-square"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-center">Design de Interiores</h3>
+          <p class="text-center">Consultoria especializada para harmonizar seus móveis com o ambiente, criando espaços aconchegantes e funcionais.</p>
+        </div>
+        
+        <div class="service-card bg-white p-6 rounded-xl shadow-md" data-aos="fade-up" data-aos-delay="600">
+          <div class="text-4xl text-yellow-700 mb-4 text-center">
+            <i class="fas fa-tools"></i>
+          </div>
+          <h3 class="text-xl font-semibold mb-3 text-center">Instalação Profissional</h3>
+          <p class="text-center">Realizamos a instalação completa com cuidado e precisão, garantindo perfeito funcionamento e durabilidade.</p>
+        </div>
+      </div>
+    </div>
   </section>
 
-<!-- CONTATO -->
-<section id="contato" class="min-h-screen flex flex-col items-center justify-center bg-white px-6">
-  <h2 class="text-3xl font-bold mb-10" data-aos="fade-up">Contato</h2>
-  <div class="flex flex-col md:flex-row gap-10" data-aos="fade-up">
-    <a href="https://instagram.com/SEUINSTAGRAM" target="_blank" class="text-xl">📷 Instagram</a>
-    <a href="https://wa.me/55SEUNUMERO" target="_blank" class="text-xl">💬 WhatsApp</a>
-  </div>
-  <div class="w-full max-w-3xl mt-10" data-aos="fade-up">
-    <!-- Google Forms incorporado -->
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScceErGpkhexP_0-Q8CAIYyH9gtFhwLwWELw03iCT4xpb1Bhg/viewform?embedded=true" 
-            width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0" class="border rounded-xl">
-      Carregando…
-    </iframe>
-  </div>
-</section>
+  <!-- CONTATO -->
+  <section id="contato" class="py-20 px-6 bg-white">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-4 text-center" data-aos="fade-up">Entre em Contato</h2>
+      <p class="max-w-2xl mx-auto text-center text-lg mb-16" data-aos="fade-up">
+        Estamos à disposição para transformar suas ideias em projetos concretos. Solicite um orçamento ou tire suas dúvidas.
+      </p>
+      
+      <div class="flex flex-col lg:flex-row gap-10 items-start">
+        <div class="w-full lg:w-1/3" data-aos="fade-right">
+          <div class="bg-wood-light p-8 rounded-xl shadow-md">
+            <h3 class="text-xl font-semibold mb-6 text-center">Nossos Canais</h3>
+            
+            <div class="space-y-6">
+              <div class="flex items-center gap-4">
+                <div class="bg-yellow-700 text-white p-3 rounded-full">
+                  <i class="fas fa-phone-alt text-lg"></i>
+                </div>
+                <div>
+                  <p class="font-semibold">Telefone</p>
+                  <a href="tel:+551199999999" class="hover:text-yellow-700">(11) 99999-9999</a>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-4">
+                <div class="bg-yellow-700 text-white p-3 rounded-full">
+                  <i class="fab fa-whatsapp text-lg"></i>
+                </div>
+                <div>
+                  <p class="font-semibold">WhatsApp</p>
+                  <a href="https://wa.me/5511999999999" target="_blank" class="hover:text-yellow-700">Enviar mensagem</a>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-4">
+                <div class="bg-yellow-700 text-white p-3 rounded-full">
+                  <i class="fab fa-instagram text-lg"></i>
+                </div>
+                <div>
+                  <p class="font-semibold">Instagram</p>
+                  <a href="https://instagram.com/mara_rubia_marcenaria" target="_blank" class="hover:text-yellow-700">@mara_rubia_marcenaria</a>
+                </div>
+              </div>
+              
+              <div class="flex items-center gap-4">
+                <div class="bg-yellow-700 text-white p-3 rounded-full">
+                  <i class="fas fa-envelope text-lg"></i>
+                </div>
+                <div>
+                  <p class="font-semibold">E-mail</p>
+                  <a href="mailto:contato@mararubia.com.br" class="hover:text-yellow-700">contato@mararubia.com.br</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="w-full lg:w-2/3" data-aos="fade-left">
+          <div class="form-container shadow-md">
+            <!-- Formulário do Google com o URL correto -->
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScceErGpkhexP_0-Q8CAIYyH9gtFhwLwWELw03iCT4xpb1Bhg/viewform?embedded=true" 
+                    width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">
+              Carregando…
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- FOOTER -->
-  <footer class="bg-gray-900 text-white text-center py-4">
-    <p>&copy; 2025 Mara Rubia - Todos os direitos reservados</p>
+  <footer class="bg-wood-dark text-white py-12">
+    <div class="container mx-auto px-6">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <h3 class="text-2xl font-bold"><span class="text-yellow-500">Mara</span> Rubia Marcenaria</h3>
+          <p class="mt-2">Transformando madeira em sonhos desde 1990</p>
+        </div>
+        
+        <div class="flex gap-6">
+          <a href="#" class="text-white hover:text-yellow-500 text-xl"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="text-white hover:text-yellow-500 text-xl"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="text-white hover:text-yellow-500 text-xl"><i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+      
+      <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+        <p>&copy; 2025 Mara Rubia Marcenaria - Todos os direitos reservados</p>
+      </div>
+    </div>
   </footer>
 
   <!-- INIT SCRIPTS -->
@@ -111,11 +317,24 @@
 
     const swiper = new Swiper('.swiper', {
       loop: true,
-      autoplay: { delay: 4000, disableOnInteraction: false },
+      autoplay: { delay: 5000, disableOnInteraction: false },
       pagination: { el: '.swiper-pagination', clickable: true },
       navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      breakpoints: {
+        640: {
+          slidesPerView: 1,
+          spaceBetween: 20,
+        },
+        768: {
+          slidesPerView: 2,
+          spaceBetween: 30,
+        },
+        1024: {
+          slidesPerView: 3,
+          spaceBetween: 30,
+        },
+      },
     });
   </script>
 </body>
 </html>
-```
