@@ -5,27 +5,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Marcenaria Manhone</title>
 
-  <!-- Tailwind -->
+  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- SwiperJS (carrossel horizontal) -->
+  <!-- SwiperJS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <!-- Animate on Scroll (AOS) -->
+  <!-- AOS Animate -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-  <!-- Font Awesome para ícones -->
+  <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
   <style>
-    body { 
-      scroll-behavior: smooth; 
+    body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      scroll-behavior: smooth;
     }
     
-    /* Cores personalizadas */
     .bg-wood-light {
       background-color: #f8f5f0;
     }
@@ -38,11 +37,6 @@
       color: #3a2c1e;
     }
     
-    .border-wood {
-      border-color: #8b5a2b;
-    }
-    
-    /* Efeito de hover para cards */
     .service-card {
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
@@ -52,7 +46,6 @@
       box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
     }
     
-    /* Ajustes para o carrossel */
     .swiper-pagination-bullet-active {
       background-color: #8b5a2b !important;
     }
@@ -61,28 +54,36 @@
       color: #8b5a2b !important;
     }
     
-    /* Gradiente para hero section */
     .hero-overlay {
       background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
     }
     
-    /* Estilo para o formulário */
     .form-container {
       background-color: #f8f5f0;
       border-radius: 12px;
       padding: 2rem;
     }
     
-    /* Ajuste para a logo */
     .logo-container {
       max-width: 100%;
       display: flex;
       justify-content: center;
+      margin-bottom: 30px;
     }
     
     .logo-img {
       max-width: 380px;
       height: auto;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+    
+    .contact-person {
+      background-color: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     }
   </style>
 </head>
@@ -106,18 +107,18 @@
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- HERO SECTION -->
   <section id="inicio" class="h-screen flex items-center justify-center bg-cover bg-center relative" style="background-image: url('https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80');">
     <div class="hero-overlay absolute inset-0"></div>
     <div data-aos="fade-up" class="text-center text-white z-10 px-4">
       
-      <!-- Logo - usando um placeholder pois a imagem original não carrega -->
-      <div class="logo-container mx-auto mb-6">
-        <div class="bg-white p-6 rounded-full shadow-lg">
-          <h1 class="text-3xl md:text-4xl font-bold text-wood-dark">
-            <span class="text-yellow-700">Marcenaria</span> Manhone
-          </h1>
-        </div>
+      <!-- Logo - SUBSTITUA O SRC COM O CAMINHO PARA SUA IMAGEM -->
+      <div class="logo-container">
+        <img src="Design elegante do logo MANHONE.png" alt="Logo Marcenaria Manhone" class="logo-img">
+        <!--
+          SE A IMAGEM NÃO CARREGAR, SUBSTITUA A LINHA ACIMA POR:
+          <img src="CAMINHO/COMPLETO/DA/SUA/IMAGEM/Design elegante do logo MANHONE.png" alt="Logo Marcenaria Manhone" class="logo-img">
+        -->
       </div>
       
       <p class="text-xl md:text-2xl mb-8 text-white">Transformamos sua visão em móveis únicos e funcionais</p>
@@ -125,7 +126,7 @@
     </div>
   </section>
 
-  <!-- SOBRE NÓS (CARROSSEL HORIZONTAL) -->
+  <!-- SOBRE NÓS -->
   <section id="quemsomos" class="py-20 px-6 bg-white">
     <div class="container mx-auto">
       <h2 class="text-3xl font-bold mb-16 text-center" data-aos="fade-up">Nossa História</h2>
@@ -168,11 +169,10 @@
                 <i class="fas fa-lightbulb"></i>
               </div>
               <h3 class="text-xl font-semibold mb-4">Inovação</h3>
-              <p class="flex-grow">Unimos tecnologia e tradição para oferecer soluções modernas e inteligentes, sempre respeitando o material e o cliente.</p>
+              <p class="flex-grow">Unimos tecnologia и традиция para oferecer soluções modernas e inteligentes, sempre respeitando o material e o cliente.</p>
             </div>
           </div>
         </div>
-        <!-- Botões -->
         <div class="swiper-button-next"></div>
         <div class="swiper-button-prev"></div>
         <div class="swiper-pagination mt-4"></div>
@@ -253,38 +253,51 @@
           <div class="bg-wood-light p-8 rounded-xl shadow-md">
             <h3 class="text-xl font-semibold mb-6 text-center">Contato dos Nossos Marceneiros</h3>
             
-            <div class="space-y-6">
-              <div class="flex items-center gap-4">
+            <!-- Contato Ricardo -->
+            <div class="contact-person">
+              <div class="flex items-center gap-4 mb-3">
                 <div class="bg-yellow-700 text-white p-3 rounded-full">
                   <i class="fas fa-user text-lg"></i>
                 </div>
                 <div>
-                  <p class="font-semibold">Ricardo Manhone</p>
-                  <a href="tel:+5511998508394" class="hover:text-yellow-700">(11) 99850-8394</a>
+                  <p class="font-semibold text-lg">Ricardo Manhone</p>
+                  <p class="text-sm">Especialista em móveis planejados</p>
                 </div>
               </div>
-              
-              <div class="flex items-center gap-4">
+              <div class="mt-3">
+                <a href="tel:+5511998508394" class="flex items-center gap-2 text-wood-dark hover:text-yellow-700 mb-2">
+                  <i class="fas fa-phone"></i> (11) 99850-8394
+                </a>
+                <a href="https://wa.me/5511998508394" target="_blank" class="flex items-center gap-2 text-wood-dark hover:text-yellow-700">
+                  <i class="fab fa-whatsapp"></i> Enviar mensagem
+                </a>
+              </div>
+            </div>
+            
+            <!-- Contato Carlos -->
+            <div class="contact-person">
+              <div class="flex items-center gap-4 mb-3">
                 <div class="bg-yellow-700 text-white p-3 rounded-full">
                   <i class="fas fa-user text-lg"></i>
                 </div>
                 <div>
-                  <p class="font-semibold">Carlos Manhone</p>
-                  <a href="tel:+5511944789929" class="hover:text-yellow-700">(11) 94478-9929</a>
+                  <p class="font-semibold text-lg">Carlos Manhone</p>
+                  <p class="text-sm">Especialista em projetos sob medida</p>
                 </div>
               </div>
-              
-              <div class="flex items-center gap-4">
-                <div class="bg-yellow-700 text-white p-3 rounded-full">
-                  <i class="fab fa-whatsapp text-lg"></i>
-                </div>
-                <div>
-                  <p class="font-semibold">WhatsApp</p>
-                  <a href="https://wa.me/5511998508394" target="_blank" class="hover:text-yellow-700">Fale conosco</a>
-                </div>
+              <div class="mt-3">
+                <a href="tel:+5511944789929" class="flex items-center gap-2 text-wood-dark hover:text-yellow-700 mb-2">
+                  <i class="fas fa-phone"></i> (11) 94478-9929
+                </a>
+                <a href="https://wa.me/5511944789929" target="_blank" class="flex items-center gap-2 text-wood-dark hover:text-yellow-700">
+                  <i class="fab fa-whatsapp"></i> Enviar mensagem
+                </a>
               </div>
-              
-              <div class="flex items-center gap-4">
+            </div>
+            
+            <!-- Redes Sociais -->
+            <div class="mt-6 pt-6 border-t border-gray-300">
+              <div class="flex items-center gap-4 mb-4">
                 <div class="bg-yellow-700 text-white p-3 rounded-full">
                   <i class="fab fa-instagram text-lg"></i>
                 </div>
@@ -309,7 +322,7 @@
         
         <div class="w-full lg:w-2/3" data-aos="fade-left">
           <div class="form-container shadow-md">
-            <!-- Formulário do Google com o URL correto -->
+            <!-- Formulário do Google -->
             <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScceErGpkhexP_0-Q8CAIYyH9gtFhwLwWELw03iCT4xpb1Bhg/viewform?embedded=true" 
                     width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">
               Carregando…
@@ -341,29 +354,46 @@
     </div>
   </footer>
 
-  <!-- INIT SCRIPTS -->
+  <!-- SCRIPTS -->
   <script>
-    AOS.init({ duration: 1000, once: true });
-
-    const swiper = new Swiper('.swiper', {
-      loop: true,
-      autoplay: { delay: 5000, disableOnInteraction: false },
-      pagination: { el: '.swiper-pagination', clickable: true },
-      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
-      breakpoints: {
-        640: {
-          slidesPerView: 1,
-          spaceBetween: 20,
+    // Inicializar AOS
+    document.addEventListener('DOMContentLoaded', function() {
+      AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 100
+      });
+      
+      // Inicializar Swiper
+      const swiper = new Swiper('.swiper', {
+        loop: true,
+        autoplay: {
+          delay: 5000,
+          disableOnInteraction: false,
         },
-        768: {
-          slidesPerView: 2,
-          spaceBetween: 30,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
         },
-        1024: {
-          slidesPerView: 3,
-          spaceBetween: 30,
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
-      },
+        breakpoints: {
+          640: {
+            slidesPerView: 1,
+            spaceBetween: 20,
+          },
+          768: {
+            slidesPerView: 2,
+            spaceBetween: 30,
+          },
+          1024: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+      });
     });
   </script>
 </body>
