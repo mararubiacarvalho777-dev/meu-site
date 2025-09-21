@@ -33,6 +33,10 @@
       background-color: #3a2c1e;
     }
     
+    .bg-wood-medium {
+      background-color: #5d4037;
+    }
+    
     .text-wood-dark {
       color: #3a2c1e;
     }
@@ -52,10 +56,6 @@
     
     .swiper-button-next, .swiper-button-prev {
       color: #8b5a2b !important;
-    }
-    
-    .hero-overlay {
-      background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4));
     }
     
     .form-container {
@@ -99,11 +99,24 @@
     }
     
     .hero-section {
-      background-color: #3a2c1e;
+      background-color: #5d4037; /* Marrom sólido */
       min-height: 100vh;
       display: flex;
       align-items: center;
       justify-content: center;
+    }
+    
+    /* Melhorias para o formulário */
+    .form-iframe-container {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      background: white;
+    }
+    
+    .form-iframe-container iframe {
+      display: block;
+      border: none;
     }
   </style>
 </head>
@@ -127,7 +140,7 @@
     </nav>
   </header>
 
-  <!-- HERO SECTION - SEM IMAGEM DE FUNDO -->
+  <!-- HERO SECTION - COR MARROM SÓLIDA -->
   <section id="inicio" class="hero-section">
     <div data-aos="fade-up" class="text-center text-white z-10 px-4">
       
@@ -352,10 +365,10 @@
         </div>
         
         <div class="w-full lg:w-2/3" data-aos="fade-left">
-          <div class="form-container shadow-md">
-            <!-- Formulário do Google -->
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScceErGpkhexP_0-Q8CAIYyH9gtFhwLwWELw03iCT4xpb1Bhg/viewform?embedded=true" 
-                    width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">
+          <div class="form-iframe-container">
+            <!-- Formulário do Google com altura ajustada -->
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScceErGpkhexP_0-Q8CAIYyH9gtFhwLwWELw03iCT4xpb1Bhg/viewform?embedded=true&hl=pt-BR" 
+                    width="100%" height="800" frameborder="0" marginheight="0" marginwidth="0">
               Carregando…
             </iframe>
           </div>
